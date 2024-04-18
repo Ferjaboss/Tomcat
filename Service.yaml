@@ -6,6 +6,8 @@ spec:
   type: LoadBalancer
   ports:
   - port: 9090
-    targetPort: 9081
+    protocol: TCP
+    targetPort: 9090
   selector:
     app: demo
+    

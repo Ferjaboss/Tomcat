@@ -18,4 +18,4 @@ spec:
       - name: demo
         image: 192.168.149.141:9001/demo:1
         ports:
-        - containerPort: 9081
+        - containerPort: 9090
