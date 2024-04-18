@@ -1,9 +1,9 @@
 apiVersion: apps/v1
-kind: Pod
+kind: Deployment
 metadata:
   name: demo-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: demo
@@ -19,6 +19,3 @@ spec:
         image: 192.168.149.141:9001/demo:1
         ports:
         - containerPort: 9090
-
-
-        
