@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-deplo
+  name: springboot-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: springboot-deplo
+      app: springboot-app
   template:
     metadata:
       labels:
-        app: springboot-deplo
+        app: springboot-app
     spec:
       imagePullSecrets:
       - name: masterkey
       containers:
-      - name: springboot-deplo
+      - name: springboot-app
         image: master:9001/demo:1
         ports:
         - containerPort: 9090
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: springboot-deplo
+    app: springboot-app
   ports:
     - protocol: TCP
       port: 9090
