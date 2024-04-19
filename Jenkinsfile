@@ -47,7 +47,7 @@ pipeline {
             steps {
                     sh 'kubectl apply -f Deployment.yaml'
                     sh 'kubectl apply -f Service.yaml'
-                }
+                    }
         }
     }
 }
