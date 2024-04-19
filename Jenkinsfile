@@ -45,10 +45,8 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                 withEnv(['KUBECONFIG=/home/master/.kube/config']) {
                     sh 'kubectl apply -f Deployment.yaml'
                     sh 'kubectl apply -f Service.yaml'
-                    }
                 }
         }
     }
