@@ -1,9 +1,8 @@
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: demo
@@ -12,10 +11,23 @@ spec:
       labels:
         app: demo
     spec:
-      imagePullSecrets:
-      - name: regcred
       containers:
-      - name: demo
+      - name: demo-container
         image: 192.168.149.141:9001/demo:1
         ports:
-        - containerPort: 8080
+        - containerPort: 9090
+        imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+spec:
+  selector:
+    app: demo
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090
+  type: LoadBalancer
