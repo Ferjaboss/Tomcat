@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    ${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=tunartisan -Dsonar.java.binaries=. -Dsonar.host.url=http://master:9000 -Dsonar.login=squ_a918939eb419f31cbdd274d2d03830fa34d3ee8c
+                    ${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=springboot -Dsonar.java.binaries=. -Dsonar.host.url=http://master:9000 -Dsonar.login=squ_a918939eb419f31cbdd274d2d03830fa34d3ee8c
                     '''
                 }
             }
