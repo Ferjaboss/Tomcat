@@ -17,6 +17,7 @@ spec:
       containers:
       - name: springboot-app
         image: master:9001/demo:1
+        imagePullPolicy: Always
         ports:
         - containerPort: 9090
 ---
