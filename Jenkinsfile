@@ -45,6 +45,8 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
+                    sh 'kubectl delete deployment springboot-app || true'
+                    sh 'kubectl delete service springboot-svc || true'
                     sh 'kubectl apply -f Deployment.yaml'
                     }
         }
