@@ -8,6 +8,6 @@ public class Controller {
    // return index file from resources/static folder
     @GetMapping("/")
     public String index() {
-        return "Hello World";
+        return "Hello ISI";
     }
 }
